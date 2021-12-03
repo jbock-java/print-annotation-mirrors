@@ -2,8 +2,6 @@ plugins {
     id('java')
 }
 
-group = 'io.github.jbock-java'
-
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
@@ -26,24 +24,8 @@ repositories {
     mavenCentral()
 }
 
-tasks.withType(AbstractArchiveTask) {
-    preserveFileTimestamps = false
-    reproducibleFileOrder = true
-}
-
-tasks.withType(GenerateModuleMetadata) {
-    enabled = true
-}
-
 dependencies {
-    implementation('jakarta.inject:jakarta.inject-api:2.0.1')
-    testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
-    testImplementation('io.github.jbock-java:compile-testing:0.19.10')
-}
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        events('failed')
-    }
+    implementation('com.google.dagger:dagger:2.40.4')
+    annotationProcessor('com.google.dagger:dagger-compiler:2.40.4')
+    implementation('com.google.auto.value:auto-value-annotations:1.8.2')
 }
