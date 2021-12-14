@@ -1,4 +1,4 @@
-[dagger]() generates invalid code
+[dagger](https://github.com/google/dagger/issues/3091) generates invalid code
 
 See [MapBindingComponentProcessorTest.mapBindingsWithInaccessibleKeys](https://github.com/google/dagger/blob/master/javatests/dagger/internal/codegen/MapBindingComponentProcessorTest.java)
 
